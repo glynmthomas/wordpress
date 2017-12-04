@@ -1,0 +1,5 @@
+add_filter('relevanssi_pre_excerpt_content', 'rlv_trim_vc_shortcodes');
+function rlv_trim_vc_shortcodes($content) {
+    $content = preg_replace('/\[\/?vc_.*?\]/', '', $content);
+    return $content;
+}
