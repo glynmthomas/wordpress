@@ -1,0 +1,7 @@
+function b3m_search_form( $form, $search_text, $button_text, $label ) {
+		$onfocus = " onfocus=\"if (this.value == '$search_text') {this.value = '';}\"";
+		$onblur = " onblur=\"if (this.value == '') {this.value = '$search_text';}\"";
+		$form = '<form itemprop="potentialAction" itemscope="" itemtype="https://schema.org/SearchAction" method="get" class="search-form" action="' . home_url() . '/search" role="search"><input type="search" value="' . esc_attr( $search_text ) . '" name="_sf_s" ' . $onfocus . $onblur . ' /><input type="submit" value="' . esc_attr( $button_text ) . '" />		</form>';
+		return $form;
+	}
+	add_filter( 'genesis_search_form', 'b3m_search_form', 10, 4);
