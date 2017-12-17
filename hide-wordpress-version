@@ -1,0 +1,4 @@
+function wpversion_remove_version() {
+return '';
+}
+add_filter('the_generator', 'wpversion_remove_version');
